@@ -16,3 +16,5 @@ jobs:
       run:  dir C:\hostedtoolcache\windows
     - name: env
       run:  set
+    - name: ridk version
+      run:  ridk version
