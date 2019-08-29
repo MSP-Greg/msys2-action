@@ -1,0 +1,18 @@
+name: MSYS2 Install
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v1
+    - name: env
+      run:  set
+    - name: Install MSYS2
+      uses: MSP-Greg/msys2-action/install@master
+    - name: Is it installed in hostedtoolcache?
+      run:  dir C:\hostedtoolcache
+    - name: Is it installed in windows?
+      run:  dir C:\hostedtoolcache\windows

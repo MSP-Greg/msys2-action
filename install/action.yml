@@ -1,0 +1,6 @@
+name: 'MSP-Greg Install msys2'
+description: 'Install msys2'
+author: 'MSP-Greg'
+runs:
+  using: 'node12'
+  main: 'main.js'

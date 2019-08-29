@@ -1,0 +1,4 @@
+`mklink /J ${process.env.RUNNER_TOOL_CACHE}/msys64 ${process.env.RUNNER_TEMP}/msys64`
+
+RUNNER_TEMP=d:\a\_temp
+RUNNER_TOOL_CACHE=C:/hostedtoolcache/windows
