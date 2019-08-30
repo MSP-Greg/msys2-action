@@ -14,7 +14,7 @@ function run() {
 
       core.exportVariable('MAKE', `${topDir}/msys64/usr/bin/make.exe`);
 
-      const newPath = process.env['PATH'].replace(/[^;]+?(Strawberry|CMake|OpenSSL)[^;]*;/g, '');
+      const newPath = process.env['PATH'].replace(/[^;]+?(Strawberry|CMake|mingw64|OpenSSL)[^;]*;/g, '');
       core.exportVariable('PATH', newPath);
     }
   } catch (error) {

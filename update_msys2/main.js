@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
-const core = require("@actions/core");
-const exec = require("@actions/exec");
-const tc   = require("@actions/tool-cache");
+const core = require('@actions/core');
+const exec = require('@actions/exec');
+const tc   = require('@actions/tool-cache');
 
 async function run() {
   try {
