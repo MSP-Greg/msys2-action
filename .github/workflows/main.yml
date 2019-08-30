@@ -14,3 +14,5 @@ jobs:
       uses: MSP-Greg/msys2-action/update_msys2@master
     - name: Update OpenSSL
       uses: MSP-Greg/msys2-action/update_openssl@master
+    - name: Where is OpenSSL?
+      run:  where.exe openssl.exe
