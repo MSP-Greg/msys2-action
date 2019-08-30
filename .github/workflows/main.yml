@@ -8,12 +8,10 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v1
-    - name: Install MSYS2
-      uses: MSP-Greg/msys2-action/install@master
-    - name: Is it installed in hostedtoolcache?
-      run:  dir C:\hostedtoolcache
-    - name: Is it installed in windows?
-      run:  dir C:\hostedtoolcache\windows
+    #- name: Install MSYS2
+    #  uses: MSP-Greg/msys2-action/install@master
+    - name: Add MSYS2 paths
+      uses: MSP-Greg/msys2-action/add_paths@master
     - name: env
       run:  set
     - name: ridk version

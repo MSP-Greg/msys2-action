@@ -1,0 +1,6 @@
+name: 'MSP-Greg Add msys2 paths'
+description: 'Add msys2 paths'
+author: 'MSP-Greg'
+runs:
+  using: 'node12'
+  main: 'main.js'
