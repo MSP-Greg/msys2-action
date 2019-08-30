@@ -3,7 +3,7 @@
 const core   = require('@actions/core');
 const exec   = require('@actions/exec');
 const tc     = require('@actions/tool-cache');
-const c_proc = require('child-process');
+const c_proc = require('child_process');
 
 async function run() {
   try {
