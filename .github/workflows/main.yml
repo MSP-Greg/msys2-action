@@ -14,5 +14,5 @@ jobs:
       run:  ridk version
     - name: Add MSYS2 paths
       uses: MSP-Greg/msys2-action/add_paths@master
-    - name: env
-      run:  set
+    - name: PATH
+      run:  set PATH
