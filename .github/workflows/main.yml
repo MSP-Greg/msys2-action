@@ -16,3 +16,6 @@ jobs:
       uses: MSP-Greg/msys2-action/add_paths@master
     - name: PATH
       run:  set PATH
+    - name: MAKE
+      run:  set MAKE
+      

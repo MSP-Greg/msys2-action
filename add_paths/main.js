@@ -8,12 +8,13 @@ const c_proc = require('child_process');
 function run() {
   try {
     if (process.platform === 'win32') {
-      const topDir = c_proc.execSync(`ruby.exe -e "STDOUT.write RbConfig::TOPDIR"`).toString().trim().replace(/\//g, "\\");
-      core.addPath(`${topDir}\\msys64\\mingw64\\bin`);
-      core.addPath(`${topDir}\\msys64\\usr\\bin`);
+      const topDir = c_proc.execSync(`ruby.exe -e "STDOUT.write RbConfig::TOPDIR"`).toString().trim();
+      core.addPath(`${topDir.replace(/\//g, "\\")}\\msys64\\mingw64\\bin`);
+      core.addPath(`${topDir.replace(/\//g, "\\")}\\msys64\\usr\\bin`);
+
+      process.env['MAKE'] = `${topDir}/msys64/usr/bin/make.exe`;
 
       core.cleanPath();
-      c_proc.execSync(`set PATH=${process.env['PATH']}`);
     }
   } catch (error) {
     core.setFailed(error.message);
