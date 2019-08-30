@@ -8,13 +8,7 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v1
-    - name: ridk version
-      run:  ridk version
     - name: Add MSYS2 paths
       uses: MSP-Greg/msys2-action/add_paths@master
-    - name: PATH
-      run:  set PATH
-    - name: MAKE
-      run:  set MAKE
     - name: Update OpenSSL
       uses: MSP-Greg/msys2-action/update_openssl@master
