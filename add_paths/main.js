@@ -12,7 +12,7 @@ async function run() {
 
       await core.addPath(`${topDir}/msys64/mingw64/bin`);
       await core.addPath(`${topDir}/msys64/usr/bin`);
-      process.env['PATH'] = process.env['PATH'].replace(/C:\Strawberry[^;]+;/g, '');
+      process.env['PATH'] = process.env['PATH'].replace(/C:\\Strawberry[^;]*;/g, '');
     }
   } catch (error) {
     core.setFailed(error.message);
