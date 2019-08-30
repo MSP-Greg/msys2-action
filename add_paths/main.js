@@ -11,7 +11,7 @@ async function run() {
       const topDir = c_proc.execSync(`ruby.exe -e "STDOUT.write RbConfig::TOPDIR"`).toString().trim();
 
       process.env['PATH'] = process.env['PATH'].replace(/C:\\Strawberry[^;]*;/g, '');
-      process.env['PATH'] = process.env['PATH'].replace(/C:\Strawberry[^;]*;/g, '');
+      process.env['PATH'] = process.env['PATH'].replace(/C:Strawberry[^;]*;/g, '');
 
       await core.addPath(`${topDir}/msys64/mingw64/bin`);
       await core.addPath(`${topDir}/msys64/usr/bin`);
