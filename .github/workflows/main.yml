@@ -10,9 +10,9 @@ jobs:
       uses: actions/checkout@v1
     #- name: Install MSYS2
     #  uses: MSP-Greg/msys2-action/install@master
+    - name: ridk version
+      run:  ridk version
     - name: Add MSYS2 paths
       uses: MSP-Greg/msys2-action/add_paths@master
     - name: env
       run:  set
-    - name: ridk version
-      run:  ridk version
