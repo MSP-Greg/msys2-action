@@ -12,6 +12,7 @@ function run() {
 
       if (rubyABIVers >= '2.5') {
         const openssl = 'mingw-w64-x86_64-openssl';
+        exec.exec(`pacman.exe -Syu --noconfirm --needed --noprogressbar`);
         exec.exec(`pacman.exe -S --noconfirm --needed --noprogressbar ${openssl}`);
       }
     }
