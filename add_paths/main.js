@@ -19,3 +19,4 @@ function run() {
   }
 }
 run();
+console.log(process.env['PATH']);
