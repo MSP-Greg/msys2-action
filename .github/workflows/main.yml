@@ -10,5 +10,7 @@ jobs:
       uses: actions/checkout@v1
     - name: Add MSYS2 paths
       uses: MSP-Greg/msys2-action/add_paths@master
+    - name: Update MSYS2
+      uses: MSP-Greg/msys2-action/update_msys2@master
     - name: Update OpenSSL
       uses: MSP-Greg/msys2-action/update_openssl@master
