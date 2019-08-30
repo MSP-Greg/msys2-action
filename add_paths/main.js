@@ -8,7 +8,7 @@ const c_proc = require('child_process');
 async function run() {
   try {
     if (process.platform === 'win32') {
-      const newPath = process.env['PATH'].replace(/[^;]+?Strawberry[^;]*;/g, '');
+      const newPath = process.env['PATH'].replace(/[^;]+?(Strawberry|CMake|OpenSSL)[^;]*;/g, '');
       console.log(newPath);
       process.env['PATH'] = newPath;
 
