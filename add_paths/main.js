@@ -8,7 +8,7 @@ const c_proc = require('child_process');
 async function run() {
   try {
     if (process.platform === 'win32') {
-      const rubyTopDir = c_proc.spawnSync('ruby.exe -e "STDOUT.write RbConfig::TOPDIR"');
+      const rubyTopDir = await c_proc.spawnSync('ruby.exe -e "STDOUT.write RbConfig::TOPDIR"');
       const topDir = rubyTopDir.stdout.trim();
 
       await core.addPath(`${topDir}/msys64/mingw64/bin`);
