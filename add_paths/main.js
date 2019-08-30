@@ -18,12 +18,10 @@ function run() {
       core.addPath(`${topDir.replace(/\//g, "\\")}\\msys64\\mingw64\\bin`);
       core.addPath(`${topDir.replace(/\//g, "\\")}\\msys64\\usr\\bin`);
 
-      env['MAKE'] = `${topDir}/msys64/usr/bin/make.exe`;
-      env.MAKE    = `${topDir}/msys64/usr/bin/make.exe`;
-      cleanPath();
-      console.log(`MAKE=${env['MAKE']}`);
-      console.log(`PATH=${env['PATH']}`);
-      
+      core.exportVariable('MAKE', `${topDir}/msys64/usr/bin/make.exe`);
+
+      const newPath = process.env['PATH'].replace(/[^;]+?(Strawberry|CMake|OpenSSL)[^;]*;/g, '');
+      core.exportVariable('PATH') = newPath;
     }
   } catch (error) {
     core.setFailed(error.message);
