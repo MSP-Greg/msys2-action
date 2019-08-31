@@ -8,7 +8,7 @@ const child = require('child_process');
 function run() {
   try {
     if (process.platform === 'win32') {
-      const newPath = process.env['PATH'].replace(/[^;]+?(Strawberry|CMake|mingw64|OpenSSL)[^;]*;/g, '');
+      const newPath = process.env['PATH'].replace(/[^;]+?(Chocolatey|CMake|mingw64|OpenSSL|Strawberry)[^;]*;/g, '');
       core.exportVariable('PATH', newPath);
 
       const topDir = child.execSync(`ruby.exe -e "STDOUT.write RbConfig::TOPDIR"`).toString().trim();
