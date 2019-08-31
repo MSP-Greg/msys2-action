@@ -15,7 +15,8 @@ async function run() {
         const openssl = 'mingw-w64-x86_64-openssl';
         await exec.exec(`pacman.exe -S --noconfirm --needed --noprogressbar ${openssl}`);
       } else {
-        const openssl_2_4 = 'https://sourceforge.net/projects/msys2/files/REPOS/MINGW/x86_64/mingw-w64-x86_64-openssl-1.0.2.p-1-any.pkg.tar.xz'
+
+        const openssl_2_4 = 'https://dl.bintray.com/larskanis/rubyinstaller2-packages/mingw-w64-x86_64-openssl-1.0.2.s-1-any.pkg.tar.xz'
         const openssl_2_4_path = await tc.downloadTool(openssl_2_4);
         
         await exec.exec(`pacman.exe -Udd --noconfirm --noprogressbar ${openssl_2_4_path}`);
