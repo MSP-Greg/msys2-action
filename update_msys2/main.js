@@ -12,13 +12,12 @@ async function run() {
       await exec.exec(`bash.exe -c "pacman-key --populate msys2"`);
       const args = '--noconfirm --noprogressbar';
       const pre  = ' mingw-w64-x86_64-';
-      const pkgs = ['', 'ragel'].join(pre);
-      await exec.exec(`pacman.exe -Syu ${args}`);
-      await exec.exec(`pacman.exe -Su  ${args}`);
-      await exec.exec(`pacman.exe -S ${args} ${pkgs}`);
       // full update, takes too long
-      // await exec.exec('pacman.exe -Syu --noconfirm --needed --noprogressbar');
-      // await exec.exec('pacman.exe -Su  --noconfirm --needed --noprogressbar');
+      //await exec.exec(`pacman.exe -Syu ${args}`);
+      //await exec.exec(`pacman.exe -Su  ${args}`);
+      const pkgs = ['', 'binutils', 'crt', 'headers', 'isl', 'libiconv', 'mpc', 'gcc-libs', 'windows-default-manifest', 'winpthreads', 'zlib', 'gcc', 'ragel'].join(pre);
+      await exec.exec(`pacman.exe -Sy ${args}`);
+      await exec.exec(`pacman.exe -S ${args} ${pkgs}`);
     }
   } catch (error) {
     core.setFailed(error.message);
