@@ -11,7 +11,7 @@ async function run() {
       await exec.exec(`bash.exe -c "pacman-key --init"`);
       await exec.exec(`bash.exe -c "pacman-key --populate msys2"`);
       await exec.exec('pacman.exe -Sy');
-      const args = '--noconfirm --needed --noprogressbar';
+      const args = '--noconfirm --noprogressbar';
       const pre  = ' mingw-w64-x86_64-';
       const pkgs = ['', 'binutils', 'gcc-libs', 'gcc', 'ragel'].join(pre);
       await exec.exec(`pacman.exe -S ${args} ${pkgs}`);
