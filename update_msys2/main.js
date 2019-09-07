@@ -13,7 +13,7 @@ async function run() {
       await exec.exec('pacman.exe -Sy');
       const args = '--noconfirm --noprogressbar';
       const pre  = ' mingw-w64-x86_64-';
-      const pkgs = ['', 'binutils', 'gcc-libs', 'gcc', 'ragel'].join(pre);
+      const pkgs = ['', 'gcc-base', 'gcc', 'ragel'].join(pre);
       await exec.exec(`pacman.exe -S ${args} ${pkgs}`);
             // full update, takes too long
       // await exec.exec('pacman.exe -Syu --noconfirm --needed --noprogressbar');
