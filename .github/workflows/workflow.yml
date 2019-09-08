@@ -14,12 +14,19 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.4.x
-    - name: Add MSYS2 paths
-      uses: MSP-Greg/msys2-action/add_paths@master
-    - name: Update MSYS2
-      uses: MSP-Greg/msys2-action/update_msys2@master
-    - name: Update OpenSSL
-      uses: MSP-Greg/msys2-action/update_openssl@master
+    - name: Windows MSYS2
+      uses: MSP-Greg/msys2-action@master
+      with:
+        base: update
+        mingw: openssl ragel
+#    - name: Add MSYS2 paths
+#      uses: MSP-Greg/msys2-action/add_paths@master
+#    - name: Update MSYS2
+#      uses: MSP-Greg/msys2-action/update_msys2@master
+#    - name: Update OpenSSL
+#      uses: MSP-Greg/msys2-action/update_openssl@master
+    - name: List MinGW packages
+      run:  pacman -Q
     - name: Where is?
       run:  |
         where.exe openssl.exe

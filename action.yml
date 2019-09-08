@@ -1,0 +1,16 @@
+name: 'MSP-Greg MSYS2 Operations'
+description: 'Operations on MSYS2'
+author: 'MSP-Greg'
+inputs:
+  base:
+    description: 'update'
+    default: ''
+  mingw:
+    description: 'mingw packages to install'
+    default: ''
+  msys2:
+    description: 'msys2 packages to install'
+    default: ''
+runs:
+  using: 'node12'
+  main: 'lib/main.js'
