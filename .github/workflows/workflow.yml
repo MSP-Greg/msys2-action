@@ -18,7 +18,7 @@ jobs:
       uses: MSP-Greg/msys2-action@master
       with:
         base: update
-        mingw: openssl ragel
+        mingw: openssl
         msys2: automake1.16 bison curl patch sed
 #    - name: Add MSYS2 paths
 #      uses: MSP-Greg/msys2-action/add_paths@master
