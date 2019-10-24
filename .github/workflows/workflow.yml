@@ -8,8 +8,8 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v1
-    - name: set
-      run:  set
+    - name: Show ENV
+      run:  gci env:* | sort-object name
     - name: load ruby
       uses: actions/setup-ruby@v1
       with:
@@ -20,12 +20,6 @@ jobs:
         base: update
         mingw: openssl
         msys2: automake1.16 bison curl patch sed
-#    - name: Add MSYS2 paths
-#      uses: MSP-Greg/msys2-action/add_paths@master
-#    - name: Update MSYS2
-#      uses: MSP-Greg/msys2-action/update_msys2@master
-#    - name: Update OpenSSL
-#      uses: MSP-Greg/msys2-action/update_openssl@master
     - name: List MinGW packages
       run:  pacman -Q
     - name: Where is?
@@ -33,3 +27,4 @@ jobs:
         where.exe openssl.exe
         where.exe make.exe
         where.exe gcc.exe
+        where.exe 7z.exe
