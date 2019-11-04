@@ -6,12 +6,12 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
+    - name: .gitconfig
+      run:  git config -l
     - name: checkout
       uses: actions/checkout@v1
     - name: Show ENV
       run:  gci env:* | sort-object name
-    - name: .gitconfig
-      run: Get-Content "$env:USERPROFILE/.gitconfig" | foreach {Write-Output $_}
     - name: load ruby
       uses: actions/setup-ruby@v1
       with:
