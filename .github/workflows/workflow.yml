@@ -12,6 +12,8 @@ jobs:
       uses: actions/checkout@v1
     - name: Show ENV
       run:  gci env:* | sort-object name
+    - name: Show PATH
+      run:  Write-Host $env:PATH.replace(";", "`n")
     - name: load ruby
       uses: actions/setup-ruby@v1
       with:
