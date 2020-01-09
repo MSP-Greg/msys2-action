@@ -17,6 +17,17 @@ jobs:
     - name: Show PATH
       run:  Write-Host $env:PATH.replace(";", "`n")
 
+    - name: Where is?
+      run:  |
+        # where queries
+        $dash = "—" * 60
+        write-host "$dash openssl"              ; where.exe openssl.exe
+        write-host "$dash libcrypto-1_1-x64.dll"; where.exe libcrypto-1_1-x64.dll
+        write-host "$dash libssl-1_1-x64.dll"   ; where.exe libssl-1_1-x64.dll
+        write-host "`n$dash make"               ; where.exe make.exe
+        write-host "`n$dash gcc"                ; where.exe gcc.exe
+        write-host "`n$dash 7z.exe"             ; where.exe 7z.exe
+
     - name: load ruby
       uses: actions/setup-ruby@v1
       with:
@@ -34,9 +45,11 @@ jobs:
 
     - name: Where is?
       run:  |
-        write-host "------------------ openssl"  ; where.exe openssl.exe
-        write-host "------------------ libcrypto-1_1-x64.dll"; where libcrypto-1_1-x64.dll
-        write-host "------------------ libssl-1_1-x64.dll"; where libssl-1_1-x64.dll
-        write-host "`n------------------ make"   ; where.exe make.exe
-        write-host "`n------------------ gcc"    ; where.exe gcc.exe
-        write-host "`n------------------ 7z.exe" ; where.exe 7z.exe
+        # where queries
+        $dash = "—" * 60
+        write-host "$dash openssl"              ; where.exe openssl.exe
+        write-host "$dash libcrypto-1_1-x64.dll"; where.exe libcrypto-1_1-x64.dll
+        write-host "$dash libssl-1_1-x64.dll"   ; where.exe libssl-1_1-x64.dll
+        write-host "`n$dash make"               ; where.exe make.exe
+        write-host "`n$dash gcc"                ; where.exe gcc.exe
+        write-host "`n$dash 7z.exe"             ; where.exe 7z.exe
