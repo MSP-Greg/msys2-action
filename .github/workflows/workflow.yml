@@ -10,25 +10,33 @@ jobs:
       run:  git config -l
     - name: checkout
       uses: actions/checkout@v1
+
     - name: Show ENV
-      run:  gci Env: | Sort Name
+      run:  gci env:* | sort-object name
+
     - name: Show PATH
       run:  Write-Host $env:PATH.replace(";", "`n")
+
     - name: load ruby
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.4.x
+
     - name: Windows MSYS2
       uses: MSP-Greg/msys2-action@master
       with:
         base: update
         mingw: openssl
         msys2: automake1.16 bison curl patch sed
+
     - name: List MinGW packages
       run:  pacman -Q
+
     - name: Where is?
       run:  |
-        write-host "------------------ openssl"; where.exe openssl.exe
-        write-host "------------------ make"   ; where.exe make.exe
-        write-host "------------------ gcc"    ; where.exe gcc.exe
-        where.exe 7z.exe
+        write-host "------------------ openssl"  ; where.exe openssl.exe
+        write-host "------------------ libcrypto-1_1-x64.dll"; where libcrypto-1_1-x64.dll
+        write-host "------------------ libssl-1_1-x64.dll"; where libssl-1_1-x64.dll
+        write-host "`n------------------ make"   ; where.exe make.exe
+        write-host "`n------------------ gcc"    ; where.exe gcc.exe
+        write-host "`n------------------ 7z.exe" ; where.exe 7z.exe
