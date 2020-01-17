@@ -62,17 +62,18 @@ pacman.exe -Syyuu --noconfirm 2> $null
 Write-Host " Install msys2 packages".PadLeft($wid, $dash)
 pacman.exe -S --noconfirm --needed --noprogressbar base-devel compression
 
+# mingw package list
+$tools = "___clang ___cmake ___gcc ___ragel"
+
 # install mingw64 packages
 Write-Host " Install mingw64 packages".PadLeft($wid, $dash)
 $pre = "mingw-w64-x86_64-"
-$tools = "___cmake ___gcc ___llvm ___ragel".replace('___', $pre)
-pacman.exe -S --noconfirm --needed --noprogressbar $tools.split(' ')
+pacman.exe -S --noconfirm --needed --noprogressbar $tools.replace('___', $pre).split(' ')
 
 # install mingw32 packages
 #Write-Host " Install mingw32 packages".PadLeft($wid, $dash)
 #$pre = "mingw-w64-i686-"
-#$tools = "___cmake ___gcc ___llvm ___ragel".replace('___', $pre)
-#pacman.exe -S --noconfirm --needed --noprogressbar $tools.split(' ')
+#pacman.exe -S --noconfirm --needed --noprogressbar $tools.replace('___', $pre).split(' ')
 
 # clean all packages to decrease image size ?
 Write-Host " Clean packages".PadLeft($wid, $dash)
