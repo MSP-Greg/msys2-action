@@ -1,0 +1,13 @@
+name: MSYS2 Install
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: install MSYS2
+        run:  ./Install-MSYS2.ps1
