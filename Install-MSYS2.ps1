@@ -71,9 +71,9 @@ $pre = "mingw-w64-x86_64-"
 pacman.exe -S --noconfirm --needed --noprogressbar $tools.replace('___', $pre).split(' ')
 
 # install mingw32 packages
-#Write-Host " Install mingw32 packages".PadLeft($wid, $dash)
-#$pre = "mingw-w64-i686-"
-#pacman.exe -S --noconfirm --needed --noprogressbar $tools.replace('___', $pre).split(' ')
+Write-Host " Install mingw32 packages".PadLeft($wid, $dash)
+$pre = "mingw-w64-i686-"
+pacman.exe -S --noconfirm --needed --noprogressbar $tools.replace('___', $pre).split(' ')
 
 # clean all packages to decrease image size ?
 Write-Host " Clean packages".PadLeft($wid, $dash)
@@ -83,9 +83,9 @@ Write-Host
 Write-Host " Installed mingw64 packages".PadLeft($wid, $dash)
 pacman.exe -Qs mingw-w64-x86_64- | grep local/ | sed -r "s/local\/| \(.+\)$//g"
 
-#Write-Host
-#Write-Host " Installed mingw32 packages".PadLeft($wid, $dash)
-#pacman.exe -Qs mingw-w64-i686- | grep local/ | sed -r "s/local\/| \(.+\)$//g"
+Write-Host
+Write-Host " Installed mingw32 packages".PadLeft($wid, $dash)
+pacman.exe -Qs mingw-w64-i686- | grep local/ | sed -r "s/local\/| \(.+\)$//g"
 
 Write-Host
 Write-Host " Installed msys2 packages".PadLeft($wid, $dash)
