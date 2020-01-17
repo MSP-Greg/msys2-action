@@ -1,4 +1,4 @@
-name: MSYS2 Install
+name: MSYS2 Info
 
 on: [push]
 
