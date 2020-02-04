@@ -21,13 +21,18 @@ jobs:
       run:  |
         # where queries
         $dash = "—" * 60
+        $dashs = "—" * 20
         write-host "$dash openssl"              ; where.exe openssl.exe
         write-host "$dash libcrypto-1_1-x64.dll"; where.exe libcrypto-1_1-x64.dll
         write-host "$dash libssl-1_1-x64.dll"   ; where.exe libssl-1_1-x64.dll
         write-host "`n$dash make"               ; where.exe make.exe
         write-host "`n$dash gcc"                ; where.exe gcc.exe
+        write-host "`n$dash gcc"                ; where.exe pacman.exe
         write-host "`n$dash 7z.exe"             ; where.exe 7z.exe
-
+        Write-host "`n$dashs C:\ProgramData\Chocolatey\bin\gcc --version"
+        C:\ProgramData\Chocolatey\bin\gcc --version
+        Write-Host "`ndashs C:\Strawberry\c\bin\gcc --version"
+        C:\Strawberry\c\bin\gcc --version
     - name: load ruby
       uses: actions/setup-ruby@v1
       with:
