@@ -3,7 +3,9 @@ name: MSYS2 Info
 on: [push]
 
 jobs:
-  build:
+  info:
+    name: >-
+      Actions Windows Info
     runs-on: windows-latest
     steps:
     - name: .gitconfig
@@ -65,4 +67,15 @@ jobs:
         gcc --version
 
     - name: Encoding Info
-     run: ./encoding.ps1
+      run: ./encoding.ps1
+
+  msys2_install:
+    name: >-
+      Install MSYS2
+    runs-on: windows-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: install MSYS2
+        run:  ./Install-MSYS2.ps1
