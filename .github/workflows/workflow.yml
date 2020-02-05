@@ -33,7 +33,7 @@ jobs:
     - name: load ruby
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: 2.4.x
+        ruby-version: 2.7.x
 
     - name: Windows MSYS2
       uses: MSP-Greg/msys2-action@master
@@ -63,3 +63,6 @@ jobs:
         C:\Strawberry\c\bin\gcc --version
         Write-Host "`n$dashs gcc --version"
         gcc --version
+
+    - name: Encoding Info
+     run: ./encoding.ps1
